@@ -45,12 +45,12 @@
 - (void)loadView {
     [super loadView];
     NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSString* basePath = [[NSString alloc] initWithFormat:@"%@/HTML/index.html", resourcePath];
+    NSString* basePath = [NSString stringWithFormat:@"%@/HTML/index.html", resourcePath];
     
     WebView* webView = (WebView*)[self view];
     NSURL* url = [NSURL fileURLWithPath:basePath];
-    NSURLRequest* urlRequest = [[NSURLRequest alloc] initWithURL:url];
-    
+    NSURLRequest* urlRequest = [NSURLRequest requestWithURL:url];
+	
     [[webView mainFrame] loadRequest:urlRequest];
 
     NSLog(@"loadView loading URL: %@", url);

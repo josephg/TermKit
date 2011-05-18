@@ -29,13 +29,11 @@
 - (IBAction) openPreferences: sender {
     id prefsController = [[TermKitPrefsController alloc] init]; 
     [prefsController showWindow:self];
-    [prefsController retain];
 }
 
 - (IBAction) newWindow: sender {
     id windowController = [[TermKitWindowController alloc] init]; 
     [windowController showWindow:self];
-    [windowController retain];
 }
 
 @end
